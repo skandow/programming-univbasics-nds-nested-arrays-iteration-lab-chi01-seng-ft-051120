@@ -20,10 +20,10 @@ def find_greater_pair(src)
   victorious_numbers = []
   row_index = 0
   while row_index < src.count do
-    if row_index[0] < row_index[1]
-      victorious_numbers << row_index[1]
+    if src[row_index][0] < src[row_index][1]
+      victorious_numbers << src[row_index][1]
     else
-      victorious_numbers << row_index[0]
+      victorious_numbers << src[row_index][0]
     end
     row_index += 1 
   end
