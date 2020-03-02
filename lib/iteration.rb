@@ -48,7 +48,7 @@ def total_even_pairs(src)
       even_stevens << src[row_index][0]
       even_stevens << src[row_index][1]
     end
-    rod_index += 1 
+    row_index += 1 
   end
   even_stevens
 end
