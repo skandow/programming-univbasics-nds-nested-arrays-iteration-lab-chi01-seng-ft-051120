@@ -50,5 +50,11 @@ def total_even_pairs(src)
     end
     row_index += 1 
   end
-  even_stevens
+  total = 0 
+  row_index = 0 
+  while row_index < even_stevens.count do 
+    total += even_stevens[row_index]
+    row_index += 1
+  end
+  total 
 end
