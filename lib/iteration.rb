@@ -6,9 +6,28 @@ def join_ingredients(src)
   #
   # "I love (inner array element 0) and (inner array element 1) on my pizza""
   # As such, there should be a new String for each inner array, or pair
+  message_array = []
+  row_index = 0 
+  while row_index < src.count do 
+    message = "I love " + src[row_index][0] + " and " + src[row_index][1] + " on my pizza"
+    message_array << message
+    row_index += 1
+  end
+  message_array
 end
 
 def find_greater_pair(src)
+  victorious_numbers = []
+  row_index = 0
+  while row_index < src.count do
+    if src[row_index][0] < src[row_index][1]
+      victorious_numbers << src[row_index][1]
+    else
+      victorious_numbers << src[row_index][0]
+    end
+    row_index += 1 
+  end
+  victorious_numbers
   # src will be an array of [ [number1, number2], ... [numberN, numberM] ]
   # Produce a new Array that contains the larger number of each of the pairs
   # that are in the inner Arrays
@@ -22,4 +41,20 @@ def total_even_pairs(src)
   # As a reminder any number % 2 will return 0 or 1. If the result is 0, then
   # the number was even. Review the operator documentation if you've forgotten
   # this!
+  even_stevens = []
+  row_index = 0 
+  while row_index < src.count do
+    if src[row_index][0] % 2 == 0 && src[row_index][1] % 2 == 0
+      even_stevens << src[row_index][0]
+      even_stevens << src[row_index][1]
+    end
+    row_index += 1 
+  end
+  total = 0 
+  row_index = 0 
+  while row_index < even_stevens.count do 
+    total += even_stevens[row_index]
+    row_index += 1
+  end
+  total 
 end
